@@ -1,0 +1,1 @@
+CREATE TABLE `A2F`.`User` ( `UserID` INT NOT NULL , `Usertype` VARCHAR(50) NOT NULL DEFAULT 'General' , `Name` VARCHAR(50) NOT NULL , `Institutional Email` VARCHAR(50) NOT NULL , `University Registration ID` INT NOT NULL , `Password` VARCHAR(50) NOT NULL , `Phone No` INT NOT NULL , `bKash Number` INT NOT NULL , PRIMARY KEY (`UserID`)) ENGINE = InnoDB;
