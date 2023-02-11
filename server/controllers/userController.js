@@ -12,7 +12,7 @@ exports.home = (req, res) => {
 };
 
 exports.view_register = (req, res) => {
-  console.log(req.url);
+  console.log('This is view',req.url);
   res.render("register",{ layout: false ,exists:false});
 };
 
@@ -35,11 +35,11 @@ exports.register = (req, res) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
     const data = req.body;
-
     connection.query(
       "select count(*) as count from User where InstitutionalEmail = ?",
       [data.email],
       (err, rows) => {
+        console.log(rows[0]);
         console.log(rows[0].count);
         if (rows[0].count<1) 
         {
