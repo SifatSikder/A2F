@@ -46,7 +46,7 @@ exports.register = (req, res) => {
             connection.query("INSERT INTO User SET Name = ?, InstitutionalEmail = ?, UniversityRegistrationID = ?, Password = ?,PhoneNumber = ?,bKashNumber = ?",[data.Username,data.email,data.UniversityRegistrationID,data.password,data.PhoneNumber,data.bKashNumber],
             (err,rows)=>{
                 connection.release();
-                if(!err) res.send("success");
+                if(!err)  res.redirect("/login");
                 else     res.send(err);
             })
         }
@@ -61,4 +61,8 @@ exports.register = (req, res) => {
       }
     );
   }); //connecting to the database
+};
+
+exports.login = (req, res) => {
+  res.render("login",{ layout: false });
 };

@@ -11,4 +11,6 @@ router.get("/register4", controller.register4);
 router.get("/register", controller.view_register);
 router.post("/register", controller.register);
 
+router.get("/login", controller.login);
+
 module.exports =router;
