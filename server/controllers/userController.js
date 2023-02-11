@@ -13,7 +13,7 @@ exports.home = (req, res) => {
 
 exports.view_register = (req, res) => {
   console.log(req.url);
-  res.render("register", { layout: false });
+  res.render("register",{ layout: false ,exists:false});
 };
 
 exports.register2 = (req, res) => {
@@ -55,7 +55,8 @@ exports.register = (req, res) => {
             console.log("code is here");
             console.log(req.url);
             const params = {count: rows[0].count ,message : "User already exists" };
-            res.redirect('/register')  
+            res.render("register",{ layout: false ,exists:true});
+
         }
       }
     );
