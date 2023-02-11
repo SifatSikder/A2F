@@ -15,5 +15,4 @@ const user= require("./server/routes/user")
 app.use("",user);
 
 
-
 app.listen(port, () => {console.log(`Listening on port ${port}`);});

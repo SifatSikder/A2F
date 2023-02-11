@@ -16,7 +16,7 @@ body {
   font-family: "Muli-Regular";
   font-size: 15px;
   margin: 0;
-  color: #fff; }
+  color: #000; }
 
 input, textarea, select, button {
   font-family: "Muli-SemiBold"; }
@@ -52,7 +52,7 @@ a {
     display: none; }
 
 .form-inner {
-  background: #ff97a4;
+  background: #87ceeb;
   padding-top: 16.36vh;
   padding-left: 4vw;
   padding-right: 4vw; }
@@ -85,10 +85,10 @@ label {
   height: 45px;
   background: none;
   padding: 0 19px;
-  color: #fff;
+  color: #000;
   font-size: 17px; }
   .form-control.error {
-    border-color: #fd677a !important;
+    border-color: #000 !important;
     background: url("../images/error.png") no-repeat center right 19px; }
   .form-control.valid {
     background: url("../images/valid.png") no-repeat center right 19px; }
@@ -109,8 +109,8 @@ button {
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #fff;
-  color: #ff97a4;
+  background: #000;
+  color: #fff;
   text-transform: uppercase;
   font-size: 17px;
   overflow: hidden;
@@ -129,7 +129,7 @@ button {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #fd677a;
+    background: #0e60ad;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 50%;
@@ -159,19 +159,19 @@ button {
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 19px;
-  color: #fff;
+  color: #000;
   transition: all 0.5s ease;
   margin-right: 19px; }
   .socials-icon:hover {
     background: #fff;
     border: 1px solid transparent;
-    color: #ff97a4; }
+    color: #0e60ad; }
   .socials-icon:last-child {
     margin-right: 0; }
 
 p {
   font-family: "Muli-SemiBold";
-  color: #ffff66;
+  color: #000;
   margin-bottom: 22px; }
 
 @media (max-width: 1500px) {

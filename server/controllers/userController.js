@@ -7,17 +7,14 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
 }); // a cache of database connection so that we can reuse connections when future requests come in
 
-pool.getConnection((err, connection) => {
-    if (err) throw err;
-    console.log(`Connected to database as ID ${connection.threadId}`);
-})//connecting to the database
+
 
 
 exports.home = (req, res) => {
     res.render("home");
 };
 
-exports.register = (req, res) => {
+exports.view_register = (req, res) => {
     console.log(req.url);
     res.render("register",{layout: false});
 }; 
@@ -35,4 +32,18 @@ exports.register3 = (req, res) => {
 exports.register4 = (req, res) => {
     console.log(req.url);
     res.render("register4",{layout: false});
+};
+
+exports.register = (req,res)=>{
+    pool.getConnection((err, connection) => {
+        if (err) throw err;
+        const data = req.body;
+
+        connection.query("INSERT INTO User SET Name = ?, InstitutionalEmail = ?, UniversityRegistrationID = ?, Password = ?,PhoneNumber = ?,bKashNumber = ?",[data.Username,data.email,data.UniversityRegistrationID,data.password,data.PhoneNumber,data.bKashNumber],
+        (err,rows)=>{
+            connection.release();
+            if(!err) res.send("success");
+            else     res.send(err);
+        })
+    })//connecting to the database
 };

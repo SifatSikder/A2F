@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>RegistrationForm_v8 by Colorlib</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- MATERIAL DESIGN ICONIC FONT -->
-		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
-		
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="css/style.css">
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>RegistrationForm_v8 by Colorlib</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<body>
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
-		<div class="wrapper">
-			<div class="image-holder">
-				<img src="images/registration-form-8.png" alt="">
-			</div>
-			<div class="form-inner">
-				<form action="">
-					<div class="form-header">
-						<h3>Sign up</h3>
-						<img src="images/sign-up.png" alt="" class="sign-up-icon">
-					</div>
-					<div class="form-group">
-						<label for="">Username:</label>
-						<input type="text" class="form-control" data-validation="length alphanumeric" data-validation-length="3-12">
-					</div>
-					<div class="form-group">
-						<label for="">E-mail:</label>
-						<input type="text" class="form-control" data-validation="email">
-					</div>
-					<div class="form-group" >
-						<label for="">Password:</label>
-						<input type="password" class="form-control" data-validation="length" data-validation-length="min8">
-					</div>
-					<button>create my account</button>
-					<div class="socials">
-						<p>Sign up with social platforms</p>
-						<a href="" class="socials-icon">
-							<i class="zmdi zmdi-facebook"></i>
-						</a>
-						<a href="" class="socials-icon">
-							<i class="zmdi zmdi-instagram"></i>
-						</a>
-						<a href="" class="socials-icon">
-							<i class="zmdi zmdi-twitter"></i>
-						</a>
-						<a href="" class="socials-icon">
-							<i class="zmdi zmdi-tumblr"></i>
-						</a>
-					</div>
-				</form>
-			</div>
-			
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="image-holder">
+			<img src="images/registration-form-8.png" alt="">
 		</div>
-		
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/jquery.form-validator.min.js"></script>
-		<script src="js/main.js"></script>
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+		<div class="form-inner">
+			<form action="/register" method="post">
+				<div class="form-header">
+					<h3>Sign up</h3>
+					<img src="images/sign-up.png" alt="" class="sign-up-icon">
+				</div>
+
+				<div class="form-group">
+					<label for="">Username:</label>
+					<input type="text" class="form-control" data-validation="length"
+						data-validation-length="4-12" name="Username">
+				</div>
+
+				<div class="form-group">
+					<label for="">E-mail:</label>
+					<input type="email" class="form-control" data-validation="email" name="email">
+				</div>
+
+				<div class="form-group">
+					<label for="">University Registration ID:</label>
+					<input type="text" class="form-control" data-validation="length" data-validation-length="10"
+						name="UniversityRegistrationID">
+				</div>
+
+				<div class="form-group">
+					<label for="">Password:</label>
+					<input type="password" class="form-control" data-validation="length" data-validation-length="min8"
+						name="password">
+				</div>
+
+				<div class="form-group">
+					<label for="">Contact Number:</label>
+					<input type="tel" class="form-control" data-validation="length" data-validation-length="11-14" name="PhoneNumber" maxlength ="14" 
+					oninput="this.value = this.value.replace(/[^+0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+				</div>
+				<div class="form-group">
+					<label for="">bKash Number:</label>
+					<input type="tel" class="form-control" data-validation="length" data-validation-length="11-14" name="bKashNumber" maxlength ="14"
+					oninput="this.value = this.value.replace(/[^+0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+				</div>
+				<button type="submit">create my account</button>
+				<div class="socials">
+					<p>Sign up with social platforms</p>
+					<a href="" class="socials-icon">
+						<i class="zmdi zmdi-facebook"></i>
+					</a>
+					<a href="" class="socials-icon">
+						<i class="zmdi zmdi-instagram"></i>
+					</a>
+					<a href="" class="socials-icon">
+						<i class="zmdi zmdi-twitter"></i>
+					</a>
+					<a href="" class="socials-icon">
+						<i class="zmdi zmdi-tumblr"></i>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.form-validator.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
 </html>
