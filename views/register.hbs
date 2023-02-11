@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>RegistrationForm_v8 by Colorlib</title>
+	<title>Sign up</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- MATERIAL DESIGN ICONIC FONT -->
@@ -27,8 +27,8 @@
 
 				<div class="form-group">
 					<label for="">Username:</label>
-					<input type="text" class="form-control" data-validation="length"
-						data-validation-length="4-12" name="Username">
+					<input type="text" class="form-control" data-validation="length" data-validation-length="4-12"
+						name="Username">
 				</div>
 
 				<div class="form-group">
@@ -50,15 +50,23 @@
 
 				<div class="form-group">
 					<label for="">Contact Number:</label>
-					<input type="tel" class="form-control" data-validation="length" data-validation-length="11-14" name="PhoneNumber" maxlength ="14" 
-					oninput="this.value = this.value.replace(/[^+0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+					<input type="tel" class="form-control" data-validation="length" data-validation-length="11-14"
+						name="PhoneNumber" maxlength="14"
+						oninput="this.value = this.value.replace(/[^+0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+						required>
 				</div>
 				<div class="form-group">
 					<label for="">bKash Number:</label>
-					<input type="tel" class="form-control" data-validation="length" data-validation-length="11-14" name="bKashNumber" maxlength ="14"
-					oninput="this.value = this.value.replace(/[^+0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+					<input type="tel" class="form-control" data-validation="length" data-validation-length="11-14"
+						name="bKashNumber" maxlength="14"
+						oninput="this.value = this.value.replace(/[^+0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+						required>
 				</div>
-				<button type="submit">create my account</button>
+				<button type="submit" >create my account</button>
+					{{!-- {{count}} --}}
+				{{!-- {{#if count}}
+					<button onclick="givealert()"></button>
+				{{/if}} --}}
 				<div class="socials">
 					<p>Sign up with social platforms</p>
 					<a href="" class="socials-icon">
@@ -77,9 +85,16 @@
 			</form>
 		</div>
 	</div>
+
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.form-validator.min.js"></script>
 	<script src="js/main.js"></script>
+	{{!-- <script>
+		function givealert(count) {
+
+			alert(user already exists)
+		}
+	</script> --}}
 </body>
 
 </html>
