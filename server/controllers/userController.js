@@ -10,12 +10,6 @@ const pool = mysql.createPool({
 exports.home = (req, res) => {
   res.render("home");
 };
-
-exports.view_register = (req, res) => {
-  console.log('This is view',req.url);
-  res.render("register",{ layout: false ,exists:false});
-};
-
 exports.register2 = (req, res) => {
   console.log(req.url);
   res.render("register2", { layout: false });
@@ -31,7 +25,13 @@ exports.register4 = (req, res) => {
   res.render("register4", { layout: false });
 };
 
-exports.register = (req, res) => {
+
+exports.get_register = (req, res) => {
+  console.log('This is view',req.url);
+  res.render("register",{ layout: false ,exists:false});
+};
+
+exports.post_register = (req, res) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
     const data = req.body;
@@ -63,10 +63,18 @@ exports.register = (req, res) => {
   }); //connecting to the database
 };
 
-exports.login = (req, res) => {
+exports.get_login = (req, res) => {
   res.render("login",{ layout: false });
 };
 
-exports.login2 = (req, res) => {
+exports.post_login = (req, res) => {
+
+  const data = req.body;
+  res.render("login",{ layout: false });
+};
+
+
+
+exports.get_login2 = (req, res) => {
   res.render("login2",{ layout: false });
 };
