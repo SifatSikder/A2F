@@ -25,10 +25,9 @@ exports.register4 = (req, res) => {
   res.render("register4", { layout: false });
 };
 
-
 exports.get_register = (req, res) => {
-  console.log('This is view',req.url);
-  res.render("register",{ layout: false ,exists:false});
+  console.log("This is view", req.url);
+  res.render("register", { layout: false, exists: false });
 };
 
 exports.post_register = (req, res) => {
@@ -39,24 +38,30 @@ exports.post_register = (req, res) => {
       "select count(*) as count from User where InstitutionalEmail = ?",
       [data.email],
       (err, rows) => {
-        console.log(rows[0]);
         console.log(rows[0].count);
-        if (rows[0].count<1) 
-        {
-            connection.query("INSERT INTO User SET Name = ?, InstitutionalEmail = ?, UniversityRegistrationID = ?, Password = ?,PhoneNumber = ?,bKashNumber = ?",[data.Username,data.email,data.UniversityRegistrationID,data.password,data.PhoneNumber,data.bKashNumber],
-            (err,rows)=>{
-                connection.release();
-                if(!err)  res.redirect("/login2");
-                else     res.send(err);
-            })
-        }
-        else
-        {
-            console.log("code is here");
-            console.log(req.url);
-            const params = {count: rows[0].count ,message : "User already exists" };
-            res.render("register",{ layout: false ,exists:true});
-
+        if (rows[0].count < 1) {
+          connection.query(
+            "INSERT INTO User SET Name = ?, InstitutionalEmail = ?, UniversityRegistrationID = ?, Password = ?,PhoneNumber = ?,bKashNumber = ?",
+            [
+              data.Username,
+              data.email,
+              data.UniversityRegistrationID,
+              data.password,
+              data.PhoneNumber,
+              data.bKashNumber,
+            ],
+            (err, rows) => {
+              connection.release();
+              if (!err) res.redirect("/login2");
+              else res.send(err);
+            }
+          );
+        } else {
+          const params = {
+            count: rows[0].count,
+            message: "User already exists",
+          };
+          res.render("register", { layout: false, exists: true });
         }
       }
     );
@@ -64,17 +69,34 @@ exports.post_register = (req, res) => {
 };
 
 exports.get_login = (req, res) => {
-  res.render("login",{ layout: false });
+  res.render("login", { layout: false });
 };
-
-exports.post_login = (req, res) => {
-
-  const data = req.body;
-  res.render("login",{ layout: false });
-};
-
-
 
 exports.get_login2 = (req, res) => {
-  res.render("login2",{ layout: false });
+  res.render("login2", { layout: false });
+};
+
+exports.post_login2 = (req, res) => {
+  const data = req.body;
+  console.log(data);
+
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "select count(*) as count from User where (InstitutionalEmail = ? or UniversityRegistrationID = ?) and (Password = ?)",
+      [data.username, data.username,data.Password],
+      (err, rows) => {
+        connection.release();
+        if (err) throw err;
+        if(rows[0].count==1)
+        { 
+          res.render("login2", { layout: false, unsuccessful: false});
+        }
+        else{
+          res.render("login2", { layout: false, unsuccessful: true});
+        }
+      }
+    );
+  });
+
 };
