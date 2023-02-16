@@ -8,26 +8,28 @@ const pool = mysql.createPool({
 }); // a cache of database connection so that we can reuse connections when future requests come in
 
 exports.home = (req, res) => {
-  res.render("home");
+  console.log("code is here");
+  res.render("../views/phase-1/home");
 };
+
 exports.register2 = (req, res) => {
   console.log(req.url);
-  res.render("register2", { layout: false });
+  res.render("../views/phase-1/register2", { layout: false });
 };
 
 exports.register3 = (req, res) => {
   console.log(req.url);
-  res.render("register3", { layout: false });
+  res.render("../views/phase-1/register3", { layout: false });
 };
 
 exports.register4 = (req, res) => {
   console.log(req.url);
-  res.render("register4", { layout: false });
+  res.render("../views/phase-1/register4", { layout: false });
 };
 
 exports.get_register = (req, res) => {
   console.log("This is view", req.url);
-  res.render("register", { layout: false, exists: false });
+  res.render("../views/phase-1/register", { layout: false, exists: false });
 };
 
 exports.post_register = (req, res) => {
@@ -61,7 +63,7 @@ exports.post_register = (req, res) => {
             count: rows[0].count,
             message: "User already exists",
           };
-          res.render("register", { layout: false, exists: true });
+          res.render("../views/phase-1/register", { layout: false, exists: true });
         }
       }
     );
@@ -69,11 +71,11 @@ exports.post_register = (req, res) => {
 };
 
 exports.get_login = (req, res) => {
-  res.render("login", { layout: false });
+  res.render("../views/phase-1/login", { layout: false });
 };
 
 exports.get_login2 = (req, res) => {
-  res.render("login2", { layout: false });
+  res.render("../views/phase-1/login2", { layout: false });
 };
 
 exports.post_login2 = (req, res) => {
@@ -95,7 +97,7 @@ exports.post_login2 = (req, res) => {
           res.redirect("/dashboard");
         }
         else{
-          res.render("login2", { layout: false, unsuccessful: true});
+          res.render("../views/phase-1/login2", { layout: false, unsuccessful: true});
         }
       }
     );
@@ -104,6 +106,6 @@ exports.post_login2 = (req, res) => {
 };
 
 exports.get_dashboard = (req, res) => {
-  res.render("dashboard", { layout: false });
+  res.render('../views/phase-2/dashboard', { layout: false });
 };
 

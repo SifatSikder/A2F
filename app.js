@@ -11,8 +11,8 @@ app.use(express.static("public"));
 app.engine("hbs", exphbs.engine({ extname: ".hbs" }));
 app.set("view engine", "hbs");
 
-const user= require("./server/routes/authentication")
-app.use("",user);
+const authentication= require("./server/routes/authentication")
+app.use("",authentication);
 
 
 app.listen(port, () => {console.log(`Listening on port ${port}`);});
