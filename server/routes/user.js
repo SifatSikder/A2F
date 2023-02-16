@@ -17,5 +17,6 @@ router.post("/register", controller.post_register);
 router.get("/login2", controller.get_login2);
 router.post("/login2", controller.post_login2);
 
+router.get("/dashboard", controller.get_dashboard);
 
 module.exports =router;

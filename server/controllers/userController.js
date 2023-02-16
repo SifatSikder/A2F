@@ -90,7 +90,9 @@ exports.post_login2 = (req, res) => {
         if (err) throw err;
         if(rows[0].count==1)
         { 
-          res.render("login2", { layout: false, unsuccessful: false});
+          // res.render("login2", { layout: false, unsuccessful: false});
+          // res.send("her")
+          res.redirect("/dashboard");
         }
         else{
           res.render("login2", { layout: false, unsuccessful: true});
@@ -99,5 +101,9 @@ exports.post_login2 = (req, res) => {
     );
   });
 
+};
+
+exports.get_dashboard = (req, res) => {
+  res.render("dashboard", { layout: false });
 };
 
