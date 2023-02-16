@@ -89,4 +89,8 @@ give permission
 sudo chmod 777 /var/www/html -R
 
 
+updating node version
+npm install -g n
+
+
 
