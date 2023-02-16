@@ -14,5 +14,7 @@ app.set("view engine", "hbs");
 const authentication= require("./server/routes/authentication")
 app.use("",authentication);
 
+const transaction= require("./server/routes/transaction")
+app.use("",transaction);
 
 app.listen(port, () => {console.log(`Listening on port ${port}`);});
