@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>A2F</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="anonymous">
+	<link rel="stylesheet" href="/home/css/main.css" />
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+		#header {
+			background: #39424E;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #39424E, #39424E);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #39424E, #39424E);
+		}
+
+		body {
+			font-family: 'Josefin Sans', sans-serif;
+		}
+
+		nav {
+			background: #39424E;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #39424E, #39424E);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #39424E, #39424E);
+		}
+
+		.jumbotron {
+			text-align: center;
+			height: 100vh;
+			background-image: url('/home/images/loan.gif');
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: 0.7;
+		}
+
+		.jumbotron p {
+			font-size: 35px;
+            font-weight: 1000;
+		}
+
+		.text-shade {
+			color: #39424E;
+			padding: 10px;
+			margin-top: 130px;
+			
+			padding-top: 30px;
+			
+			
+		}
+
+		.jumbotron a {
+			background: #39424E;
+			
+			background: -webkit-linear-gradient(to right, #39424E, #39424E);
+
+			background: linear-gradient(to right, #39424E, #39424E);
+			color: azure !important;
+			box-shadow: 0 5px 5px 5px grey;
+		}
+
+		.jumbotron2 {
+
+			height: 400px;
+			padding-bottom: 30px;
+			text-align: center;
+		}
+
+		.jumbotron2 h1 {
+			padding: 10px;
+
+			margin-bottom: 10px;
+			padding-top: 30px;
+			font-size: 60px;
+
+		}
+
+		.text-shade{
+			font-weight: bolder !important;
+			font-size: 200px !important;
+			text-shadow:
+				3px 3px 0 white,
+				-1px -1px 0 white,
+				1px -1px 0 white,
+				-1px 1px 0 white,
+				1px 1px 0 white;
+		}
+
+		.card-deck {
+			
+			padding: 50px;
+			width: 100%;
+			font-size: 15px;
+			background-color: #39424E;
+			border-bottom: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.card-header {
+			text-align: center;
+			background: #39424E;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #39424E, #39424E);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #39424E, #39424E);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			box-shadow: 0 5px 5px 5px black;
+			color: white !important;
+		}
+
+		.card-text {
+			padding: 30px;
+			padding-top: 70px;
+		}
+
+		.top{
+			
+			margin-bottom: 40px;
+			box-shadow: 0 5px 5px 1px black;
+			
+		}
+		
+		
+		#footer {
+			background: #39424E;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #39424E, #39424E);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #39424E, #39424E);
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="/">A2F</a>
+		<nav>
+			<a href="#menu">Menu</a>
+		</nav>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="/user/new">User SignUp</a></li>
+			<li><a href="/user/login">User Login</a></li>
+			<li><a href="/admin/login">Admin Login</a></li>
+			<li><a href="/agent/login">Agent Login</a></li>
+		</ul>
+	</nav>
+
+	<!-- Banner -->
+
+	<div class="jumbotron">
+        <h1 class="display-1 text-shade">A2F<h1>
+        <p>A community based crowdfunding platform to provide short term loans</p>
+        <a class="btn btn-success btn-lg" href="/user/login" role="button">Login</a>
+        <a class="btn btn-success btn-lg" href="/user/new" role="button">SignUp</a>
+	</div>
+
+	<div class="container jumbotron2">
+		<h1 class="display-4">About us!</h1>
+		<hr class="my-4">
+		<p>A2F is a community based lending application using crowdfunding concept. It is a web application where funds will be available anywhere and anytime. We have recently performed a survey regarding short-term loans between IIT running batch students.We discovered that 68% of students take short-term loans for mostly academic and medical purposes. They suffer from availability of funds when it is really needed.Our application A2F aims to solve this problem for accessing funds. Thus the mission of A2F is to provide short term loans within a specified community and also raise funds for that community welfare.</p>
+	</div>
+	
+	<!-- Scripts -->
+	<script src="/home/js/jquery.min.js"></script>
+	<script src="/home/js/browser.min.js"></script>
+	<script src="/home/js/breakpoints.min.js"></script>
+	<script src="/home/js/util.js"></script>
+	<script src="/home/js/main.js"></script>
+</body>
+
+</html>
