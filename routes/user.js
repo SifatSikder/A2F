@@ -19,6 +19,7 @@ router.get("/new", (req, res) => {
 });
 
 router.post("/new", uploadtest.single("profilePic"),async (req, res) => {
+  console.log(req.body)
   try {
     if (req.file == null) 
     {

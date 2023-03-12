@@ -1,5 +1,5 @@
-const https = require("https");
-const fs = require("fs");
+// const https = require("https");
+// const fs = require("fs");
 
 
 
@@ -16,7 +16,7 @@ app.use(cors())
 
 //database connection
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true} ,function(err) {
+mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true} ,function(err) {
     if (err) {
         console.log("Database Not Connected", err);
     } else {
@@ -91,7 +91,10 @@ app.use('/payment',paymentRoutes);
 app.get('/',(req,res)=>{res.render('home');})
 
 //Server Start
-https.createServer({
-    key: fs.readFileSync("key.pem"),
-    cert: fs.readFileSync("cert.pem"),
-  },app).listen(port, ()=>{console.log(`server is runing at port ${port}`)});
+// https.createServer({
+//     key: fs.readFileSync("key.pem"),
+//     cert: fs.readFileSync("cert.pem"),
+//   },app).listen(port, ()=>{console.log(`server is runing at port ${port}`)});
+
+
+  app.listen(port, ()=>{console.log(`server is runing at port ${port}`)})
