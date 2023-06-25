@@ -1,0 +1,35 @@
+post
+http://localhost:8000/user/new
+{
+  "email":"bsse1221@iit.du.ac.bd",
+  "password":"1234",
+  "username":"sifat",
+  "UniversityRegistrationID":"2019316864",
+  "PhoneNumber":"01987959788",
+  "bKashNumber":"01987959788",
+  "currentBsseYear":"3rd"
+}
+
+post
+http://localhost:8000/user/login
+{
+  "email":"bsse1221@iit.du.ac.bd",
+  "password":"1234"
+}
+
+get
+http://localhost:8000/user/dashboard
+
+
+post
+http://localhost:8000/loan/644ae4e5f394f43de37d0cb2/apply-new-loan
+{
+  "amount":5000,
+  "months":2
+}
+
+post
+http://localhost:8000/loan/644acff9a44f162e106cffa1/repay-loan
+{
+  "amount": 500
+}
