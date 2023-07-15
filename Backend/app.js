@@ -6,9 +6,10 @@ const app = express();
 require('dotenv').config()
 const port = process.env.PORT || 8080;
 
-//logger configuration
-const morgan = require('morgan');
-if (process.env.NODE_ENV == 'development') { app.use(morgan('dev')); }
+//body parser configutation
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //cors setup
 const cors = require("cors");
@@ -18,16 +19,18 @@ app.use(cors())
 const connectDB = require('./config/db')
 connectDB();
 
+//logger configuration
+const morgan = require('morgan');
+if (process.env.NODE_ENV == 'development') { app.use(morgan('dev')); }
+
+
 //passport configuration
 const passport = require('passport');
 app.use(passport.initialize());
 // app.use(passport.session());
 
 
-//body parser configutation
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
 
 //system Wallet creation
 require('./config/systemWalletCreation')
